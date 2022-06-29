@@ -10951,3 +10951,161 @@ Processing by TodosController#index as HTML
 Completed 200 OK in 180ms (Views: 55.1ms | ActiveRecord: 101.0ms | Allocations: 32310)
 
 
+Started GET "/index" for 127.0.0.1 at 2022-06-29 15:54:17 +0530
+  [1m[35m (29.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (23.5ms)[0m  [1m[34mSELECT `todos`.* FROM `todos`[0m
+  ↳ app/controllers/todos_controller.rb:3:in `map'
+  Rendering layout layouts/application.html.erb
+  Rendering todos/index.html.erb within layouts/application
+  Rendered todos/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1848)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 1935)
+Completed 500 Internal Server Error in 114ms (ActiveRecord: 74.7ms | Allocations: 12595)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="whole-div">
+  <h1>
+    TODO
+  </h1>
+
+  <%# <div class="inputs"> %>
+  <%# <form action="result" method="post"> %>
+  <%# <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token%>
+  <%# <input type="text" class="task" name="todo[new_task]" placeholder="Add Todos"/> %>
+  <%# <input type="date" class="date" name="todo[date]"/><br> %>
+  <%# <input type="submit" class="button" value="Add"/> %>
+  <%# </form> %>
+  <%# </div> %>
+
+    <%= form_with(model: @todo,  url: "/todos", method: "POST") do |form| %>
+    <%= form.text_field "todo[new_task]", class: "task", placeholder: "Add new tasks", required: true%>
+    <%= form.date_field "todo[date]", class: "date", required: true %>
+      <br>
+    <%= form.submit "Add Task", class: "submit_button" %>
+  <% end %>
+  </div>
+
+    <br>
+      <br>
+        <div class="display_div"> <% @todos.each do |todo| %>
+          <p class="display_id">
+            <%= todo.id %>
+          </p>
+          <%= form_with(url: "/todos/#{todo.id}", method: "put") do
+            <%= check_box_tag "status", nil, checked = todo.status ? true : false, class: "TodoItem-checkbox", onclick: "this.form.submit()" %>
+          <% end %>
+          <p class="display_task" id=<%= (todo.status) ? "TextItem-LineThrough" : "" %>>
+            <%= todo.new_task %>
+          </p>
+          <p class="display_date">
+            <%= todo.date %>
+          </p>
+          <%# <input type="button" class="delete_button" value="Delete"> %>
+          <a href="/delete/ <%= todo.id%>">
+            <button class="delete_button">Delete</button>
+          </a>
+          <br>
+          <% end %>
+        </div>
+
+):
+1:    <div class="whole-div">
+2:      <h1>
+3:        TODO
+4:      </h1>
+5:    
+6:      <%# <div class="inputs"> %>
+7:      <%# <form action="result" method="post"> %>
+8:      <%# <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token%>
+9:      <%# <input type="text" class="task" name="todo[new_task]" placeholder="Add Todos"/> %>
+10:      <%# <input type="date" class="date" name="todo[date]"/><br> %>
+11:      <%# <input type="submit" class="button" value="Add"/> %>
+12:      <%# </form> %>
+13:      <%# </div> %>
+14:    
+15:        <%= form_with(model: @todo,  url: "/todos", method: "POST") do |form| %>
+16:        <%= form.text_field "todo[new_task]", class: "task", placeholder: "Add new tasks", required: true%>
+17:        <%= form.date_field "todo[date]", class: "date", required: true %>
+18:          <br>
+19:        <%= form.submit "Add Task", class: "submit_button" %>
+20:      <% end %>
+21:      </div>
+22:    
+23:        <br>
+24:          <br>
+25:            <div class="display_div"> <% @todos.each do |todo| %>
+26:              <p class="display_id">
+27:                <%= todo.id %>
+28:              </p>
+29:              <%= form_with(url: "/todos/#{todo.id}", method: "put") do
+30:                <%= check_box_tag "status", nil, checked = todo.status ? true : false, class: "TodoItem-checkbox", onclick: "this.form.submit()" %>
+31:              <% end %>
+32:              <p class="display_task" id=<%= (todo.status) ? "TextItem-LineThrough" : "" %>>
+33:                <%= todo.new_task %>
+34:              </p>
+35:              <p class="display_date">
+36:                <%= todo.date %>
+37:              </p>
+38:              <%# <input type="button" class="delete_button" value="Delete"> %>
+39:              <a href="/delete/ <%= todo.id%>">
+40:                <button class="delete_button">Delete</button>
+41:              </a>
+42:              <br>
+43:              <% end %>
+44:            </div>
+  
+app/views/todos/index.html.erb:30: syntax error, unexpected '<'
+app/views/todos/index.html.erb:30: syntax error, unexpected tIDENTIFIER, expecting end
+app/views/todos/index.html.erb:30: syntax error, unexpected ',', expecting ')'
+app/views/todos/index.html.erb:30: syntax error, unexpected ',', expecting ')'
+app/views/todos/index.html.erb:47: syntax error, unexpected end, expecting end-of-input
+app/views/todos/index.html.erb:30: syntax error, unexpected '<'
+app/views/todos/index.html.erb:30: syntax error, unexpected tIDENTIFIER, expecting end
+app/views/todos/index.html.erb:30: syntax error, unexpected ',', expecting ')'
+app/views/todos/index.html.erb:30: syntax error, unexpected ',', expecting ')'
+app/views/todos/index.html.erb:47: syntax error, unexpected end, expecting end-of-input
+app/views/todos/index.html.erb:30: syntax error, unexpected '<'
+app/views/todos/index.html.erb:30: syntax error, unexpected tIDENTIFIER, expecting end
+app/views/todos/index.html.erb:30: syntax error, unexpected ',', expecting ')'
+app/views/todos/index.html.erb:30: syntax error, unexpected ',', expecting ')'
+app/views/todos/index.html.erb:47: syntax error, unexpected end, expecting end-of-input
+app/views/todos/index.html.erb:30: syntax error, unexpected '<'
+app/views/todos/index.html.erb:30: syntax error, unexpected tIDENTIFIER, expecting end
+app/views/todos/index.html.erb:30: syntax error, unexpected ',', expecting ')'
+app/views/todos/index.html.erb:30: syntax error, unexpected ',', expecting ')'
+app/views/todos/index.html.erb:47: syntax error, unexpected end, expecting end-of-input
+app/views/todos/index.html.erb:30: syntax error, unexpected '<'
+app/views/todos/index.html.erb:30: syntax error, unexpected tIDENTIFIER, expecting end
+app/views/todos/index.html.erb:30: syntax error, unexpected ',', expecting ')'
+app/views/todos/index.html.erb:30: syntax error, unexpected ',', expecting ')'
+app/views/todos/index.html.erb:47: syntax error, unexpected end, expecting end-of-input
+app/views/todos/index.html.erb:30: syntax error, unexpected '<'
+app/views/todos/index.html.erb:30: syntax error, unexpected tIDENTIFIER, expecting end
+app/views/todos/index.html.erb:30: syntax error, unexpected ',', expecting ')'
+app/views/todos/index.html.erb:30: syntax error, unexpected ',', expecting ')'
+app/views/todos/index.html.erb:47: syntax error, unexpected end, expecting end-of-input
+Started GET "/index" for 127.0.0.1 at 2022-06-29 15:55:05 +0530
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (33.9ms)[0m  [1m[34mSELECT `todos`.* FROM `todos`[0m
+  ↳ app/controllers/todos_controller.rb:3:in `map'
+  Rendering layout layouts/application.html.erb
+  Rendering todos/index.html.erb within layouts/application
+  Rendered todos/index.html.erb within layouts/application (Duration: 53.1ms | Allocations: 9872)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 88.5ms | Allocations: 16337)
+Completed 200 OK in 407ms (Views: 96.7ms | ActiveRecord: 33.9ms | Allocations: 21172)
+
+
+Started GET "/index" for 127.0.0.1 at 2022-06-29 15:55:18 +0530
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (24.1ms)[0m  [1m[34mSELECT `todos`.* FROM `todos`[0m
+  ↳ app/controllers/todos_controller.rb:3:in `map'
+  Rendering layout layouts/application.html.erb
+  Rendering todos/index.html.erb within layouts/application
+  Rendered todos/index.html.erb within layouts/application (Duration: 22.6ms | Allocations: 4163)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.4ms | Allocations: 7566)
+Completed 200 OK in 83ms (Views: 31.2ms | ActiveRecord: 24.1ms | Allocations: 9461)
+
+

@@ -25,7 +25,7 @@
         <div class="display_div"> <% @todos.each do |todo| %>
           <%# <p class="display_id">
             <%= todo.id %>
-          <%# </p> %>c
+          <%# </p> %>
           <%= form_with(url: "/todos/#{todo.id}", method: "put") do %>
             <%= check_box_tag "status", nil, checked = todo.status ? true : false, class: "TodoItem-checkbox", onclick: "this.form.submit()" %>
           <% end %>
