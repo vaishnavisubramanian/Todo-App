@@ -31,3 +31,5 @@ end
     params.require(:todo).permit(:new_task,:date)
   end
 end
+
+

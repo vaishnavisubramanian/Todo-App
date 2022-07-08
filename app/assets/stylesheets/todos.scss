@@ -1,145 +1,162 @@
-// Place all the styles related to the todos controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
-// Place all the styles related to the todos controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
-* {
-    box-sizing: border-box;
-}
-
-body {
-    background: url('bg1.jpg');
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: 1850px 300px;
-}
-
-h1 {
-    color: aqua;
-    font-size: 2rem;
-    padding-top: 5%;
-    font-family: proxima-nova, sans-serif;
-}
-
-.task {
-    margin-top: 1%;
-    /* margin-left: 34%; */
-    width: 40%;
-    height: 4vh;
-    text-align: center;
-    font-size: larger;
-    border-radius: 1vh;
-    font-family: proxima-nova, sans-serif;
-    margin-top: -30px;
-}
-
-.task::placeholder {
-    color: black;
-}
-
-.task:hover {
-    background-color: #678ac0;
-    color: white;
-}
-
-.date {
-    border-radius: 1vh;
-    margin-left: 1%;
-    margin-top: 8%;
-    text-align: center;
-    width: 40%;
-    height: 4vh;
-    font-size: larger;
-    font-family: proxima-nova, sans-serif;
-    margin-top: 1030px;
-}
-
-.date:hover {
-    background-color: #678ac0;
-    color: white;
-}
-
-.submit_button {
-    border-radius: 2vh;
-    font-size: larger;
-    width: 17%;
-    height: 4vh;
-    margin-top: 3%;
-    font-family: proxima-nova, sans-serif;
-    /* margin-left: 42%; */
-}
-
-.submit_button:hover {
-    background-color: #678ac0;
-    color: white;
-}
-
-.whole-div {
-    /* box-shadow: 15px 5px 5px; */
-    border-radius: 2vh;
-    box-shadow: 0 0 20px black;
-    background: white;
-    text-align: center;
-    width: 37%;
-    height: 25vh;
-    margin-left: 31%;
-    margin-top: 6%;
-}
-
-
-/* .display_div {
-  border: 2px solid black;
-  padding-left:31.5%;
-} */
-
-.display_id {
-    font-family: proxima-nova, sans-serif;
-    font-size: 130%;
-}
-
-.display_task {
-    width: 20%;
-    overflow: scroll;
-    margin: -2.5% auto auto 2%;
-    /* border: 2px solid black; */
-    font-family: proxima-nova, sans-serif;
-    font-size: 130%;
-}
-
-.display_date {
-    width: 7%;
-    /* border: 2px solid black; */
-    margin-top: -1.5%;
-    margin-left: 23%;
-    font-family: proxima-nova, sans-serif;
-    font-size: 130%;
-}
-
-.delete_button {
-    margin-left: 31%;
-    position: absolute;
-    margin-top: -2.7%;
-    font-family: proxima-nova, sans-serif;
-    font-size: 130%;
-}
-
-
-/*
-ul {
-  text-align: center;
-  padding: 7%;
-  font-size: 2rem;
-  list-style: circle;
-}
-
-li:hover {
-  color: red;
-  margin: 4%;
-  transition: 1.5s ease;
-  cursor: pointer;
-} */
-
-#TextItem-LineThrough {
-    text-decoration: line-through;
-}
+                                    // Place all the styles related to the todos controller here.
+                                    // They will automatically be included in application.css.
+                                    // You can use Sass (SCSS) here: https://sass-lang.com/
+                                    // Place all the styles related to the todos controller here.
+                                    // They will automatically be included in application.css.
+                                    // You can use Sass (SCSS) here: https://sass-lang.com/
+                                    * {
+                                        box-sizing: border-box;
+                                    }
+                                    
+                                    body {
+                                        background: url('bg1.jpg');
+                                        background-position: top;
+                                        background-repeat: no-repeat;
+                                        background-size: 1850px 300px;
+                                    }
+                                    
+                                    h1 {
+                                        font-size: 2rem;
+                                        padding-top: 5%;
+                                        font-family: proxima-nova, sans-serif;
+                                    }
+                                    
+                                    .task {
+                                        margin-top: 1%;
+                                        /* margin-left: 34%; */
+                                        width: 40%;
+                                        height: 4vh;
+                                        text-align: center;
+                                        font-size: larger;
+                                        border-radius: 1vh;
+                                        font-family: proxima-nova, sans-serif;
+                                    }
+                                    
+                                    .task::placeholder {
+                                        color: black;
+                                    }
+                                    
+                                    .task:hover {
+                                        background-color: #678ac0;
+                                        color: white;
+                                    }
+                                    
+                                    .date {
+                                        border-radius: 1vh;
+                                        margin-left: 1%;
+                                        margin-top: 8%;
+                                        text-align: center;
+                                        width: 40%;
+                                        height: 4vh;
+                                        font-size: larger;
+                                        font-family: proxima-nova, sans-serif;
+                                    }
+                                    
+                                    .date:hover {
+                                        background-color: #678ac0;
+                                        color: white;
+                                    }
+                                    
+                                    .submit_button {
+                                        border-radius: 2vh;
+                                        font-size: larger;
+                                        width: 17%;
+                                        height: 4vh;
+                                        margin-top: 3%;
+                                        font-family: proxima-nova, sans-serif;
+                                        /* margin-left: 42%; */
+                                    }
+                                    
+                                    .submit_button:hover {
+                                        background-color: #678ac0;
+                                        color: white;
+                                    }
+                                    
+                                    .whole-div {
+                                        /* box-shadow: 15px 5px 5px; */
+                                        border-radius: 2vh;
+                                        box-shadow: 0 0 20px black;
+                                        background: white;
+                                        text-align: center;
+                                        width: 37%;
+                                        height: 30vh;
+                                        margin-left: 31%;
+                                        margin-top: 6%;
+                                    }
+                                    
+                                    // .display_div {
+                                    //     // border: 2px solid black;
+                                    // } // .display_id {
+                                    // //     font-family: proxima-nova, sans-serif;
+                                    // //     font-size: 130%;
+                                    // // }
+                                    // .display_task {
+                                    //     width: 20%;
+                                    //     overflow: scroll;
+                                    //     // margin: -2.5% auto auto 2%;
+                                    //     margin-top: 1.5%;
+                                    //     margin-left: 2%;
+                                    //     // border: 2px solid black;
+                                    //     font-family: proxima-nova, sans-serif;
+                                    //     font-size: 130%;
+                                    //     position: absolute;
+                                    // }
+                                    // .display_date {
+                                    //     // border: 2px solid black;
+                                    //     position: relative;
+                                    //     margin-top: 20px;
+                                    //     margin-left: 28%;
+                                    //     width: 10;
+                                    //     font-family: proxima-nova, sans-serif;
+                                    //     font-size: 130%;
+                                    // }
+                                    // .delete_button {
+                                    //     // border: 2px solid black;
+                                    //     margin-left: 610px;
+                                    //     position: absolute;
+                                    //     margin-top: -2.7%;
+                                    //     font-family: proxima-nova, sans-serif;
+                                    //     font-size: 130%;
+                                    // }
+                                    // .check {
+                                    //     // border: 2px solid black;
+                                    //     width: 1.3%;
+                                    //     margin-top: 1.5%;
+                                    //     position: absolute;
+                                    // }
+                                    #TextItem-LineThrough {
+                                        text-decoration: line-through;
+                                    }
+                                    
+                                    .check {
+                                        position: absolute;
+                                        left: 590px;
+                                        font-size: x-large;
+                                    }
+                                    
+                                    .display_task {
+                                        position: absolute;
+                                        left: 630px;
+                                        margin-top: 0px;
+                                        width: 20%;
+                                        font-size: x-large;
+                                        overflow-x: scroll;
+                                        overflow-y: scroll;
+                                    }
+                                    
+                                    .display_date {
+                                        position: absolute;
+                                        left: 1010px;
+                                        margin-top: 0px;
+                                        font-size: x-large;
+                                    }
+                                    
+                                    .delete_button {
+                                        position: absolute;
+                                        left: 1170px;
+                                        font-size: large;
+                                    }
+                                    
+                                    p {
+                                        margin-top: 40px;
+                                    }
